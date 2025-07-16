@@ -1,0 +1,44 @@
+### 1. Fazer Login e Obter Token
+POST http://localhost:8080/token
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "12345"
+}
+### 2. Acessar Endpoint Protegido de Carros
+@token = eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoiYWRtaW4iLCJleHAiOjE3NTI2NDM3MTAsImlhdCI6MTc1MjY0MDExMCwic2NvcGUiOiJST0xFX0FETUlOIFJPTEVfVVNFUiJ9.R1PAhYdlOdhVhKOeIhTikc0eV5qnPXBUQGKt4G9wmMnp97tBIXie9dH4KLqBYOx1l0v7jQp6kd9T-cy9CFDDhDcbADqGXVbY3n0_runHFk0GvlMhyCAs8HQDXncYTFVSJ2HP1UDgqoC1L9ncOTwCefE-RSCoZlumDGvNAs42V8u60LcpTYiGBig5hxe4Txbb_m5BUYmKaqXclyi2WvAql4bEZItqahXekqVNYKNc67TqO1JzBwdUs5n-lCoGN9lSLnhR5InEfH3rSQBkRLDZGmnS7vw4Sk0Z7QWtBby66ZUWzTqYIT_sGxxVOgPnS1D5ZEP7Jadq11WqN25xTNA1Ow
+
+GET http://localhost:8080/carros
+Authorization: Bearer {{token}}
+
+### 3. Criar um novo Cliente
+POST http://localhost:8080/pessoas
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "nome": "Alfredo"
+}
+
+### 4. Criar um novo Carro
+POST http://localhost:8080/carros
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "marca": "Volkswagen",
+  "modelo": "Fusca",
+  "ano": 1975,
+  "placa": "ABC-1234",
+  "clienteId": 1
+}
+
+### 3. Criar um novo Cliente (Teste 2)
+POST http://localhost:8080/pessoas
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "nome": "Maria"
+}
