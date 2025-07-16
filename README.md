@@ -111,7 +111,7 @@ Para interagir com os endpoints protegidos, primeiro obtenha um token de acesso.
 
 ---
 
-## Video de Apresentacao:
+## Video de Apresentação:
 [Clique aqui](https://youtu.be/R4QLOwW9YxQ)
 
 ## 👨‍💻 Autor
